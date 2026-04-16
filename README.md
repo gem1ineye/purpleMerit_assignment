@@ -27,7 +27,7 @@ This project implements a full Role-Based Access Control (RBAC) system with:
 5. Run API:
    - `npm run dev`
 
-Backend base URL: `http://localhost:5000/api`
+Backend base URL: `http://localhost:5001/api`
 
 ## Frontend Setup
 
