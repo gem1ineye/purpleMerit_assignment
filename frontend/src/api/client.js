@@ -36,7 +36,10 @@ const apiClient = {
   getMe: (token) => request("/users/me", { token }),
   updateMe: (payload, token) => request("/users/me", { method: "PUT", body: payload, token }),
   getUsers: (params, token) => {
-    const query = new URLSearchParams(params).toString();
+    const sanitizedParams = Object.fromEntries(
+      Object.entries(params).filter(([, value]) => value !== "" && value !== null && value !== undefined)
+    );
+    const query = new URLSearchParams(sanitizedParams).toString();
     return request(`/users?${query}`, { token });
   },
   getUserById: (id, token) => request(`/users/${id}`, { token }),

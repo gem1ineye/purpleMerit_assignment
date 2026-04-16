@@ -162,12 +162,12 @@ const userQueryValidation = [
     },
     role: {
       in: ["query"],
-      optional: true,
+      optional: { options: { values: "falsy" } },
       isIn: { options: [["Admin", "Manager", "User"]], errorMessage: "invalid role" }
     },
     status: {
       in: ["query"],
-      optional: true,
+      optional: { options: { values: "falsy" } },
       isIn: { options: [["active", "inactive"]], errorMessage: "invalid status" }
     }
   }),
